@@ -46,7 +46,7 @@ def login():
         return redirect(next_page)
     return render_template('/auth/login.html', title='Sign in', form=form)
 
-@app.route('/logout')
+@app.route('/auth/logout')
 def logout():
     logout_user()
     return redirect(url_for('index'))
