@@ -5,6 +5,7 @@ from urllib.parse import urlsplit
 from app import app, db
 from app.models import User
 from app.auth.login import LoginForm
+from app.auth.register import RegistrationForm
 
 @app.route('/')
 @app.route('/index')
@@ -49,3 +50,17 @@ def login():
 def logout():
     logout_user()
     return redirect(url_for('index'))
+
+@app.route('/auth/register', methods=['GET', 'POST'])
+def register():
+    if current_user.is_authenticated:
+        return redirect(url_for('index'))
+    form = RegistrationForm()
+    if form.validate_on_submit():
+        user = User(username=form.username.data, email=form.email.data)
+        form.set_password(form.password.data)
+        db.session.add(user)
+        db.session.commit()
+        flash('Congratulations, registration is successful.')
+        return redirect(url_for('login'))
+    return render_template('register.html', title='Registration', form=form)
