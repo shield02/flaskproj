@@ -14,5 +14,6 @@ migrate = Migrate(app, db)
 
 # create and initialize flask-login
 login = LoginManager(app)
+login.login_view = 'login'
 
 from app import routes, models
