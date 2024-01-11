@@ -53,8 +53,11 @@ def logout():
 
 @app.route('/auth/register', methods=['GET', 'POST'])
 def register():
+    # check the session for the user
     if current_user.is_authenticated:
         return redirect(url_for('index'))
+    
+    # load the registration form
     form = RegistrationForm()
     if form.validate_on_submit():
         user = User(username=form.username.data, email=form.email.data)
@@ -63,4 +66,4 @@ def register():
         db.session.commit()
         flash('Congratulations, registration is successful.')
         return redirect(url_for('login'))
-    return render_template('register.html', title='Registration', form=form)
+    return render_template('/auth/register.html', title='Registration', form=form)
