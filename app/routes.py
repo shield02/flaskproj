@@ -1,6 +1,7 @@
 from flask import request, render_template, flash, redirect, url_for
 from flask_login import current_user, login_user, login_required, logout_user
 import sqlalchemy as sa
+from datetime import datetime, timezone
 from urllib.parse import urlsplit
 from app import app, db
 from app.models import User
@@ -67,3 +68,19 @@ def register():
         flash('Congratulations, registration is successful.')
         return redirect(url_for('login'))
     return render_template('/auth/register.html', title='Registration', form=form)
+
+@app.route('/user/<username>')
+@login_required
+def user(username):
+    user = db.first_or_404(sa.select(User).where(User.username == username))
+    posts = [
+        {'author': user, 'body': 'Test post #1'},
+        {'author': user, 'body': 'Test post #2'}
+    ]
+    return render_template('user.html', user=user, posts=posts)
+
+@app.before_request
+def before_request():
+    if current_user.is_authenticated:
+        current_user.last_seen = datetime.now(timezone.utc)
+        db.session.commit()
