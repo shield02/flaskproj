@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 import sqlalchemy as sa
 import sqlalchemy.orm as orm
 from app import app, db

@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 from flask import request, render_template, flash, redirect, url_for
 from flask_login import current_user, login_user, login_required, logout_user
 import sqlalchemy as sa
