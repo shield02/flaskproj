@@ -81,8 +81,8 @@ class User(UserMixin, db.Model):
             .join(Post.author.of_type(Author))
             .join(Author.followers.of_type(Follower), isouter=True)
             .where(sa.or_(
-                Follower.id == self.id),
-                Author.id == self.id)
+                Follower.id == self.id,
+                Author.id == self.id))
             .group_by(Post)
             .order_by(Post.timestamp.desc())
         )
