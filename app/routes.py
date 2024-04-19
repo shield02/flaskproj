@@ -8,7 +8,7 @@ from app import app, db
 from app.models import User
 from app.auth.login import LoginForm
 from app.auth.register import RegistrationForm
-from app.forms import EditProfileForm
+from app.forms import EditProfileForm, EmptyForm
 
 @app.route('/')
 @app.route('/index')
