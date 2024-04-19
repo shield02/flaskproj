@@ -82,6 +82,15 @@ class UserModelClass(unittest.TestCase):
         db.session.commit()
 
         # Check the following post of each user
+        f1 = db.session.scalars(u1.following_posts()).all()
+        f2 = db.session.scalars(u2.following_posts()).all()
+        f3 = db.session.scalars(u3.following_posts()).all()
+        f4 = db.session.scalars(u4.following_posts()).all()
+        self.assertEqual(f1, [p2, p4, p1])
+        self.assertEqual(f2, [p2, p3])
+        self.assertEqual(f3, [p3, p4])
+        self.assertEqual(f4, [p4])
+
 
 if __name__ == '__main__':
     unittest.main(verbosity=2)
