@@ -5,27 +5,25 @@ import sqlalchemy as sa
 from datetime import datetime, timezone
 from urllib.parse import urlsplit
 from app import app, db
-from app.models import User
+from app.models import User, Post
 from app.auth.login import LoginForm
 from app.auth.register import RegistrationForm
-from app.forms import EditProfileForm, EmptyForm
+from app.forms import EditProfileForm, EmptyForm, PostForm
 
-@app.route('/')
-@app.route('/index')
+@app.route('/', methods=['GET', 'POST'])
+@app.route('/index', methods=['GET', 'POST'])
 @login_required
 def index():
-    user = {'username': 'Shield'}
-    posts = [
-        {
-            'author': {'username': 'Shield'},
-            'body': 'Beautiful day back to work in 2024'
-        },
-        {
-            'author': {'username': 'John'},
-            'body': 'The best movies of last year had incredible gross'
-        }
-    ]
-    return render_template('index.html', title='Home', posts=posts)
+    form = PostForm()
+    if form.validate_on_submit():
+        post = Post(body=form.post.data, author=current_user)
+        db.session.add(post)
+        db.session.commit()
+        flash('Your pst is now live!')
+        return redirect(url_for('index'))
+    posts = db.session.scalars(current_user.following_posts()).all()
+    return render_template('index.html', title='Home Page', form=form,
+                           posts=posts)
 
 @app.route('/auth/login', methods=['GET', 'POST'])
 def login():
