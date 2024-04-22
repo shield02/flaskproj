@@ -84,3 +84,8 @@ sqlalchemy.exc.IntegrityError: (sqlite3.IntegrityError) UNIQUE constraint failed
 2024-04-18 04:40:48,130 INFO: Flaskapp startup [in /home/shield/projects/flask/flaskproj/app/__init__.py:51]
 2024-04-18 04:44:07,944 INFO: Flaskapp startup [in /home/shield/projects/flask/flaskproj/app/__init__.py:51]
 2024-04-18 04:47:08,426 INFO: Flaskapp startup [in /home/shield/projects/flask/flaskproj/app/__init__.py:51]
+2024-04-19 16:59:29,508 INFO: Flaskapp startup [in /home/shield/projects/flask/flaskproj/app/__init__.py:51]
+2024-04-19 17:01:00,960 INFO: Flaskapp startup [in /home/shield/projects/flask/flaskproj/app/__init__.py:51]
+2024-04-19 17:01:18,794 INFO: Flaskapp startup [in /home/shield/projects/flask/flaskproj/app/__init__.py:51]
+2024-04-19 17:08:00,176 INFO: Flaskapp startup [in /home/shield/projects/flask/flaskproj/app/__init__.py:51]
+2024-04-19 17:08:40,258 INFO: Flaskapp startup [in /home/shield/projects/flask/flaskproj/app/__init__.py:51]
