@@ -19,7 +19,7 @@ def index():
         post = Post(body=form.post.data, author=current_user)
         db.session.add(post)
         db.session.commit()
-        flash('Your pst is now live!')
+        flash('Your post is now live!')
         return redirect(url_for('index'))
     posts = db.session.scalars(current_user.following_posts()).all()
     return render_template('index.html', title='Home Page', form=form,
