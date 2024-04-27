@@ -1,0 +1,122 @@
+2024-04-27 03:16:25,224 ERROR: Exception on /index [GET] [in /home/shield/projects/flask/flaskproj/.venv/lib/python3.8/site-packages/flask/app.py:825]
+Traceback (most recent call last):
+  File "/home/shield/projects/flask/flaskproj/.venv/lib/python3.8/site-packages/flask/app.py", line 1455, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/shield/projects/flask/flaskproj/.venv/lib/python3.8/site-packages/flask/app.py", line 869, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/shield/projects/flask/flaskproj/.venv/lib/python3.8/site-packages/flask/app.py", line 867, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/shield/projects/flask/flaskproj/.venv/lib/python3.8/site-packages/flask/app.py", line 852, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/home/shield/projects/flask/flaskproj/.venv/lib/python3.8/site-packages/flask_login/utils.py", line 290, in decorated_view
+    return current_app.ensure_sync(func)(*args, **kwargs)
+  File "/home/shield/projects/flask/flaskproj/app/routes.py", line 25, in index
+    return render_template('index.html', title='Home Page', form=form,
+  File "/home/shield/projects/flask/flaskproj/.venv/lib/python3.8/site-packages/flask/templating.py", line 152, in render_template
+    return _render(app, template, context)
+  File "/home/shield/projects/flask/flaskproj/.venv/lib/python3.8/site-packages/flask/templating.py", line 133, in _render
+    rv = template.render(context)
+  File "/home/shield/projects/flask/flaskproj/.venv/lib/python3.8/site-packages/jinja2/environment.py", line 1301, in render
+    self.environment.handle_exception()
+  File "/home/shield/projects/flask/flaskproj/.venv/lib/python3.8/site-packages/jinja2/environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "/home/shield/projects/flask/flaskproj/app/templates/index.html", line 1, in top-level template code
+    {% extends "base.html" %}
+  File "/home/shield/projects/flask/flaskproj/app/templates/base.html", line 15, in top-level template code
+    <a href="{{ url-for('explore') }}">Explore</a>
+  File "/home/shield/projects/flask/flaskproj/.venv/lib/python3.8/site-packages/jinja2/utils.py", line 83, in from_obj
+    if hasattr(obj, "jinja_pass_arg"):
+jinja2.exceptions.UndefinedError: 'for' is undefined
+2024-04-27 03:16:40,451 ERROR: Exception on / [GET] [in /home/shield/projects/flask/flaskproj/.venv/lib/python3.8/site-packages/flask/app.py:825]
+Traceback (most recent call last):
+  File "/home/shield/projects/flask/flaskproj/.venv/lib/python3.8/site-packages/flask/app.py", line 1455, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/shield/projects/flask/flaskproj/.venv/lib/python3.8/site-packages/flask/app.py", line 869, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/shield/projects/flask/flaskproj/.venv/lib/python3.8/site-packages/flask/app.py", line 867, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/shield/projects/flask/flaskproj/.venv/lib/python3.8/site-packages/flask/app.py", line 852, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/home/shield/projects/flask/flaskproj/.venv/lib/python3.8/site-packages/flask_login/utils.py", line 290, in decorated_view
+    return current_app.ensure_sync(func)(*args, **kwargs)
+  File "/home/shield/projects/flask/flaskproj/app/routes.py", line 25, in index
+    return render_template('index.html', title='Home Page', form=form,
+  File "/home/shield/projects/flask/flaskproj/.venv/lib/python3.8/site-packages/flask/templating.py", line 152, in render_template
+    return _render(app, template, context)
+  File "/home/shield/projects/flask/flaskproj/.venv/lib/python3.8/site-packages/flask/templating.py", line 133, in _render
+    rv = template.render(context)
+  File "/home/shield/projects/flask/flaskproj/.venv/lib/python3.8/site-packages/jinja2/environment.py", line 1301, in render
+    self.environment.handle_exception()
+  File "/home/shield/projects/flask/flaskproj/.venv/lib/python3.8/site-packages/jinja2/environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "/home/shield/projects/flask/flaskproj/app/templates/index.html", line 1, in top-level template code
+    {% extends "base.html" %}
+  File "/home/shield/projects/flask/flaskproj/app/templates/base.html", line 15, in top-level template code
+    <a href="{{ url-for('explore') }}">Explore</a>
+  File "/home/shield/projects/flask/flaskproj/.venv/lib/python3.8/site-packages/jinja2/utils.py", line 83, in from_obj
+    if hasattr(obj, "jinja_pass_arg"):
+jinja2.exceptions.UndefinedError: 'for' is undefined
+2024-04-27 03:18:49,306 ERROR: Exception on / [GET] [in /home/shield/projects/flask/flaskproj/.venv/lib/python3.8/site-packages/flask/app.py:825]
+Traceback (most recent call last):
+  File "/home/shield/projects/flask/flaskproj/.venv/lib/python3.8/site-packages/flask/app.py", line 1455, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/shield/projects/flask/flaskproj/.venv/lib/python3.8/site-packages/flask/app.py", line 869, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/shield/projects/flask/flaskproj/.venv/lib/python3.8/site-packages/flask/app.py", line 867, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/shield/projects/flask/flaskproj/.venv/lib/python3.8/site-packages/flask/app.py", line 852, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/home/shield/projects/flask/flaskproj/.venv/lib/python3.8/site-packages/flask_login/utils.py", line 290, in decorated_view
+    return current_app.ensure_sync(func)(*args, **kwargs)
+  File "/home/shield/projects/flask/flaskproj/app/routes.py", line 25, in index
+    return render_template('index.html', title='Home Page', form=form,
+  File "/home/shield/projects/flask/flaskproj/.venv/lib/python3.8/site-packages/flask/templating.py", line 152, in render_template
+    return _render(app, template, context)
+  File "/home/shield/projects/flask/flaskproj/.venv/lib/python3.8/site-packages/flask/templating.py", line 133, in _render
+    rv = template.render(context)
+  File "/home/shield/projects/flask/flaskproj/.venv/lib/python3.8/site-packages/jinja2/environment.py", line 1301, in render
+    self.environment.handle_exception()
+  File "/home/shield/projects/flask/flaskproj/.venv/lib/python3.8/site-packages/jinja2/environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "/home/shield/projects/flask/flaskproj/app/templates/index.html", line 1, in top-level template code
+    {% extends "base.html" %}
+  File "/home/shield/projects/flask/flaskproj/app/templates/base.html", line 15, in top-level template code
+    <a href="{{ url_for('explore') }}">Explore</a>
+  File "/home/shield/projects/flask/flaskproj/.venv/lib/python3.8/site-packages/jinja2/utils.py", line 83, in from_obj
+    if hasattr(obj, "jinja_pass_arg"):
+jinja2.exceptions.UndefinedError: 'for' is undefined
+2024-04-27 03:19:07,253 INFO: Flaskapp startup [in /home/shield/projects/flask/flaskproj/app/__init__.py:51]
+2024-04-27 03:27:43,683 ERROR: Exception on /index [GET] [in /home/shield/projects/flask/flaskproj/.venv/lib/python3.8/site-packages/flask/app.py:825]
+Traceback (most recent call last):
+  File "/home/shield/projects/flask/flaskproj/.venv/lib/python3.8/site-packages/flask/app.py", line 1455, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/shield/projects/flask/flaskproj/.venv/lib/python3.8/site-packages/flask/app.py", line 869, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/shield/projects/flask/flaskproj/.venv/lib/python3.8/site-packages/flask/app.py", line 867, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/shield/projects/flask/flaskproj/.venv/lib/python3.8/site-packages/flask/app.py", line 852, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/home/shield/projects/flask/flaskproj/.venv/lib/python3.8/site-packages/flask_login/utils.py", line 290, in decorated_view
+    return current_app.ensure_sync(func)(*args, **kwargs)
+  File "/home/shield/projects/flask/flaskproj/app/routes.py", line 25, in index
+    return render_template('index.html', title='Home Page', form=form,
+  File "/home/shield/projects/flask/flaskproj/.venv/lib/python3.8/site-packages/flask/templating.py", line 152, in render_template
+    return _render(app, template, context)
+  File "/home/shield/projects/flask/flaskproj/.venv/lib/python3.8/site-packages/flask/templating.py", line 133, in _render
+    rv = template.render(context)
+  File "/home/shield/projects/flask/flaskproj/.venv/lib/python3.8/site-packages/jinja2/environment.py", line 1301, in render
+    self.environment.handle_exception()
+  File "/home/shield/projects/flask/flaskproj/.venv/lib/python3.8/site-packages/jinja2/environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "/home/shield/projects/flask/flaskproj/app/templates/index.html", line 1, in top-level template code
+    {% extends "base.html" %}
+  File "/home/shield/projects/flask/flaskproj/app/templates/base.html", line 33, in top-level template code
+    {% block content %}{% endblock %}
+  File "/home/shield/projects/flask/flaskproj/app/templates/index.html", line 21, in block 'content'
+    {% include '_post.html' %}
+  File "/home/shield/projects/flask/flaskproj/app/templates/_post.html", line 3, in top-level template code
+    <td><img src="{{ user.avatar(36) }}" alt="" srcset=""></td>
+  File "/home/shield/projects/flask/flaskproj/.venv/lib/python3.8/site-packages/jinja2/environment.py", line 485, in getattr
+    return getattr(obj, attribute)
+jinja2.exceptions.UndefinedError: 'user' is undefined
+2024-04-27 03:34:54,597 INFO: Flaskapp startup [in /home/shield/projects/flask/flaskproj/app/__init__.py:51]
