@@ -17,4 +17,4 @@ class Config:
     ADMINS = ['your-email@example.com']
 
     # configure pagination
-    POSTS_PER_PAGE = 3
+    POSTS_PER_PAGE = 25
