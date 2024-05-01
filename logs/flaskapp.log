@@ -32,3 +32,38 @@ Traceback (most recent call last):
 jinja2.exceptions.UndefinedError: 'form' is undefined
 2024-04-27 03:47:44,136 INFO: Flaskapp startup [in /home/shield/projects/flask/flaskproj/app/__init__.py:51]
 2024-04-27 03:49:36,571 INFO: Flaskapp startup [in /home/shield/projects/flask/flaskproj/app/__init__.py:51]
+2024-04-29 10:11:20,571 INFO: Flaskapp startup [in /home/shield/projects/flask/flaskproj/app/__init__.py:51]
+2024-05-01 11:43:38,023 INFO: Flaskapp startup [in /home/shield/projects/flask/flaskproj/app/__init__.py:51]
+2024-05-01 11:43:46,443 ERROR: Exception on /index [GET] [in /home/shield/projects/flask/flaskproj/.venv/lib/python3.8/site-packages/flask/app.py:825]
+Traceback (most recent call last):
+  File "/home/shield/projects/flask/flaskproj/.venv/lib/python3.8/site-packages/flask/app.py", line 1455, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/shield/projects/flask/flaskproj/.venv/lib/python3.8/site-packages/flask/app.py", line 869, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/shield/projects/flask/flaskproj/.venv/lib/python3.8/site-packages/flask/app.py", line 867, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/shield/projects/flask/flaskproj/.venv/lib/python3.8/site-packages/flask/app.py", line 852, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/home/shield/projects/flask/flaskproj/.venv/lib/python3.8/site-packages/flask_login/utils.py", line 290, in decorated_view
+    return current_app.ensure_sync(func)(*args, **kwargs)
+  File "/home/shield/projects/flask/flaskproj/app/routes.py", line 26, in index
+    per_page=app.config['POSTS_PER_PAGE'], error_out=False)
+KeyError: 'POSTS_PER_PAGE'
+2024-05-01 11:45:33,172 INFO: Flaskapp startup [in /home/shield/projects/flask/flaskproj/app/__init__.py:51]
+2024-05-01 12:02:26,488 INFO: Flaskapp startup [in /home/shield/projects/flask/flaskproj/app/__init__.py:51]
+2024-05-01 12:02:39,098 ERROR: Exception on /user/susan [GET] [in /home/shield/projects/flask/flaskproj/.venv/lib/python3.8/site-packages/flask/app.py:825]
+Traceback (most recent call last):
+  File "/home/shield/projects/flask/flaskproj/.venv/lib/python3.8/site-packages/flask/app.py", line 1455, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/shield/projects/flask/flaskproj/.venv/lib/python3.8/site-packages/flask/app.py", line 869, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/shield/projects/flask/flaskproj/.venv/lib/python3.8/site-packages/flask/app.py", line 867, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/shield/projects/flask/flaskproj/.venv/lib/python3.8/site-packages/flask/app.py", line 852, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/home/shield/projects/flask/flaskproj/.venv/lib/python3.8/site-packages/flask_login/utils.py", line 290, in decorated_view
+    return current_app.ensure_sync(func)(*args, **kwargs)
+  File "/home/shield/projects/flask/flaskproj/app/routes.py", line 85, in user
+    query = user.post.select().order_by(Post.timestamp.desc())
+AttributeError: 'User' object has no attribute 'post'
+2024-05-01 12:03:14,090 INFO: Flaskapp startup [in /home/shield/projects/flask/flaskproj/app/__init__.py:51]
