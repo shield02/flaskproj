@@ -2,7 +2,7 @@
 from flask_wtf import FlaskForm
 from flask_wtf.form import _Auto
 from wtforms import StringField, TextAreaField, SubmitField
-from wtforms.validators import ValidationError, DataRequired, Length
+from wtforms.validators import ValidationError, DataRequired, Length, Email
 from app import db
 from app.models import User
 import sqlalchemy as sa
@@ -24,10 +24,17 @@ class EditProfileForm(FlaskForm):
             if user is not None:
                 raise ValidationError('Please use a different username.')
 
+
 class EmptyForm(FlaskForm):
     submit = SubmitField('Submit')
+
 
 class PostForm(FlaskForm):
     post = TextAreaField('Say something', validators=[
         DataRequired(), Length(min=1, max=140)])
     submit = SubmitField('Submit')
+
+
+class ResetPasswordRequestForm(FlaskForm):
+    email = StringField('Email', validators=[DataRequired(), Email()])
+    submit = SubmitField('Request Password Reset')
