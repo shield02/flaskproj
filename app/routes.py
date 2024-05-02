@@ -8,7 +8,8 @@ from app import app, db
 from app.models import User, Post
 from app.auth.login import LoginForm
 from app.auth.register import RegistrationForm
-from app.forms import EditProfileForm, EmptyForm, PostForm
+from app.forms import EditProfileForm, EmptyForm, PostForm, ResetPasswordRequestForm
+from app.email import send_password_reset_email
 
 @app.route('/', methods=['GET', 'POST'])
 @app.route('/index', methods=['GET', 'POST'])
@@ -54,6 +55,21 @@ def login():
             next_page = url_for('index')
         return redirect(next_page)
     return render_template('/auth/login.html', title='Sign in', form=form)
+
+@app.route('/reset_password_request', methods=['GET', 'POST'])
+def reset_password_reset():
+    if current_user.is_authenticated:
+        return redirect(url_for('index'))
+    form = ResetPasswordRequestForm()
+    if form.validate_on_submit():
+        user = db.session.scalar(
+            sa.select(User).where(User.email == form.email.data))
+        if user:
+            send_password_reset_email(user)
+        flash('Check your email for instructions to reset your password')
+        return redirect(url_for('login'))
+    return render_template('reset_password_request.html',
+                           title='Reset Password', form=form)
 
 @app.route('/auth/logout')
 def logout():
