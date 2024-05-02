@@ -67,3 +67,4 @@ Traceback (most recent call last):
     query = user.post.select().order_by(Post.timestamp.desc())
 AttributeError: 'User' object has no attribute 'post'
 2024-05-01 12:03:14,090 INFO: Flaskapp startup [in /home/shield/projects/flask/flaskproj/app/__init__.py:51]
+2024-05-01 12:31:24,912 INFO: Flaskapp startup [in /home/shield/projects/flask/flaskproj/app/__init__.py:55]
