@@ -113,6 +113,7 @@ class Post(db.Model):
     user_id: orm.Mapped[int] = orm.mapped_column(sa.ForeignKey(User.id),
                                                  index=True)
     author: orm.Mapped[User] = orm.relationship(back_populates='posts')
+    language: orm.Mapped[Optional[str]] = orm.mapped_column(sa.String(50))
 
     def __repr__(self) -> str:
         return f'<Post {self.body}>'
