@@ -18,3 +18,6 @@ class Config:
 
     # configure pagination
     POSTS_PER_PAGE = 25
+
+    # configure languages
+    LANGUAGES = ['en', 'es']
